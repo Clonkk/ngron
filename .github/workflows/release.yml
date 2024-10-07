@@ -38,6 +38,7 @@ jobs:
        with:
          github-token: "${{ secrets.GITHUB_TOKEN }}"
          script: |
+
            const fs = require('fs').promises;
            await github.rest.repos.uploadReleaseAsset({
              name: 'ngron-${{ matrix.os }}',
