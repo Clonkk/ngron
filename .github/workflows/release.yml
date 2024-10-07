@@ -44,7 +44,7 @@ jobs:
              name: 'ngron-${{ matrix.os }}',
              owner: context.repo.owner,
              repo: context.repo.repo,
-             release_id: ${{ env.RELEASE_ID }},
+             release_id: ${{ github.event.release.id }},
              data: await fs.readFile('ngron-${{ matrix.os }}.zip'),
            });
 
