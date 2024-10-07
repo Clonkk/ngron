@@ -31,7 +31,7 @@ jobs:
        run: nimble build
 
      - name: Package 
-       run: zip ngron-${{ matrix.os }}.zip zip 
+       run: zip ngron-${{ matrix.os }}.zip ngron 
 
      - name: Upload an Asset in GitHub Release
        uses: "actions/github-script@v6"
