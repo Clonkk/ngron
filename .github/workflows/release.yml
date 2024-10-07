@@ -40,9 +40,9 @@ jobs:
          script: |
            const fs = require('fs').promises;
            await github.rest.repos.uploadReleaseAsset({
-             name: 'ngron',
+             name: 'ngron-${{ matrix.os }}',
              owner: context.repo.owner,
              repo: context.repo.repo,
              release_id: ${{ env.RELEASE_ID }},
-             data: await fs.readFile('ngron-${{ matrix.os }}.zip')  # The file to upload.
+             data: await fs.readFile('ngron-${{ matrix.os }}.zip'),
            });
